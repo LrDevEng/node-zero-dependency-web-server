@@ -5,7 +5,6 @@ import path from 'node:path';
 const PORT = 3000;
 const DIR = './public';
 const BASE_FILE = 'index.html';
-const ADDRESS = '0.0.0.0';
 
 // Object to look up http content-type based on requested file extension
 const extToContentType = {
@@ -51,4 +50,6 @@ const server = http.createServer((req, res) => {
 });
 
 // Start server and listen on specified port and address
-server.listen(PORT, ADDRESS);
+server.listen(PORT, () => {
+  console.log(`Server running at port ${PORT}`);
+});
