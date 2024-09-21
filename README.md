@@ -14,7 +14,8 @@ node index.js
 1. http://localhost:3000/ returns the file index.html located in the directory './public'
 2. http://localhost:3000/index.css returns the file index.css located in the directory './public'
 3. http://localhost:3000/resources/smiley.jpg returns the file smiley.jpg located in the directory './public/resources'
-
+<br><br>
+Example server providing mock-up page available at: https://replit.com/@lrdeveng/node-zero-dependency-web-server
 
 # Supported Files
 
