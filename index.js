@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 
-const PORT = 3000;
-const DIR = './public';
-const BASE_FILE = 'index.html';
+const port = 3000;
+const dir = './public';
+const baseFile = 'index.html';
 
 // Object to look up http content-type based on requested file extension
 const extToContentType = {
@@ -27,8 +27,8 @@ const server = http.createServer((req, res) => {
     const extname = path.extname(url);
     const endpoint =
       extname.length > 0
-        ? DIR + url
-        : DIR + (url.endsWith('/') ? url : url + '/') + BASE_FILE;
+        ? dir + url
+        : dir + (url.endsWith('/') ? url : url + '/') + baseFile;
 
     if (fs.existsSync(endpoint)) {
       // Setup positiv response head with content type based on file extension
@@ -50,6 +50,6 @@ const server = http.createServer((req, res) => {
 });
 
 // Start server and listen on specified port and address
-server.listen(PORT, () => {
-  console.log(`Server running at port ${PORT}`);
+server.listen(port, () => {
+  console.log(`Server running at port ${port}`);
 });
